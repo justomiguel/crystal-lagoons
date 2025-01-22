@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/lagunas.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/lagunas", "dest": "api/lagunas.js" },
+    { "src": "/api/lagunas/(.*)", "dest": "api/lagunas.js" }
+  ]
+}

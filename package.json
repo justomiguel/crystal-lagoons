@@ -1,0 +1,19 @@
+{
+  "name": "crystal-lagoons-api",
+  "version": "1.0.0",
+  "description": "API sobre lagunas artificiales de Crystal Lagoons",
+  "main": "api/lagunas.js",
+  "scripts": {
+    "start": "node api/lagunas.js",
+    "dev": "nodemon api/lagunas.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

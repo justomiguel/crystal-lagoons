@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 3000;
 
 const lagunas = [
     { id: 1, nombre: "San Alfonso del Mar", ubicacion: "Chile", tamaño: "8 hectáreas", tipo_agua: "Agua de mar", status: "En operación", imagen: "be3df927-6e98-4e9c-87ca-477cc4a29e7e.webp" },
@@ -26,12 +25,12 @@ const lagunas = [
 ];
 
 // Endpoint para obtener todas las lagunas
-app.get("/lagunas", (req, res) => {
+app.get("/api/lagunas", (req, res) => {
     res.json(lagunas);
 });
 
 // Endpoint para obtener una laguna por ID
-app.get("/lagunas/:id", (req, res) => {
+app.get("/api/lagunas/:id", (req, res) => {
     const laguna = lagunas.find(l => l.id === parseInt(req.params.id));
     if (laguna) {
         res.json(laguna);
@@ -40,6 +39,5 @@ app.get("/lagunas/:id", (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+// Exportar la API para Vercel
+module.exports = app;
